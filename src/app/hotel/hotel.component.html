@@ -1,0 +1,21 @@
+<div class="goikoBotoiak">
+<button type="button" class="btn btn-primary" (click)="erakutsiFormularioa()" *ngIf="ezkutatu==false">Erregistro berria sortu</button>
+<button type="button" class="btn btn-secondary" (click)="atzera()" *ngIf="ezkutatu==true">Atzera</button>
+</div>
+
+<div class="cards" *ngIf="ezkutatu==false">
+  <div *ngFor="let viajero of viajeros; let i = index">
+    <app-viajero [viajero]="viajero" [posicion]="i" (aldatuBidaiaria)="aldatuBidaiaria($event)" (ezabatuBidaiaria)="bidaiariaEzabatu($event)"></app-viajero>
+  </div>
+</div>
+
+<div class="formularioa" *ngIf="ezkutatu==true">
+  <div>
+    <form>
+      <label for="fname">First name:</label><br>
+      <input type="text" id="fname" name="fname" value={{viajeros[posicion].nombre}}><br>
+      <label for="lname">Last name:</label><br>
+      <input type="text" id="lname" name="lname">
+    </form>
+  </div>
+</div>
