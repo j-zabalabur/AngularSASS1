@@ -11,7 +11,12 @@ export class HotelComponent {
   public viajeros: Array<Viajero>;
   public ezkutatu=false;
   public posicion=0;
-
+  public izena='';
+  public abizena='';
+  public dni='';
+  public fechaI='';
+  public fechaS='';
+  public habitacion='';
   constructor(){
     this.viajeros = [
       new Viajero("Laura","Masna",'123456789','10/10/2024','20/10/2024','112'),
@@ -27,6 +32,13 @@ export class HotelComponent {
 
   erakutsiFormularioa(){
     this.ezkutatu=true;
+    this.posicion=-1;
+    this.izena='';
+    this.abizena='';
+    this.dni='';
+    this.fechaI='';
+    this.fechaS='';
+    this.habitacion='';
   }
 
   atzera(){
@@ -40,5 +52,28 @@ export class HotelComponent {
   aldatuBidaiaria(event:any){
     this.posicion=parseInt(event);
     this.ezkutatu=true;
+    this.izena=this.viajeros[this.posicion].nombre;
+    this.abizena=this.viajeros[this.posicion].apellido;
+    this.dni=this.viajeros[this.posicion].dni;
+    this.fechaI=this.viajeros[this.posicion].fechaIngreso;
+    this.fechaS=this.viajeros[this.posicion].fechaSalida;
+    this.habitacion=this.viajeros[this.posicion].habitacion;
+  }
+  aldaketakGorde(){
+    if(this.posicion!=-1){
+    this.viajeros[this.posicion] = new Viajero(this.izena, this.abizena, this.dni, this.fechaI, this.fechaS, this.habitacion);
+    }else{
+      this.viajeros.push(new Viajero(this.izena, this.abizena, this.dni, this.fechaI, this.fechaS, this.habitacion));
+    }
+    this.ezkutatu=false;
+
+  }
+  insertarDatos(){
+    this.izena='';
+    this.abizena='';
+    this.dni=this.viajeros[this.posicion].dni;
+    this.fechaI=this.viajeros[this.posicion].fechaIngreso;
+    this.fechaS=this.viajeros[this.posicion].fechaSalida;
+    this.habitacion=this.viajeros[this.posicion].habitacion;
   }
 }

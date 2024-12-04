@@ -1,6 +1,6 @@
 <div class="goikoBotoiak">
 <button type="button" class="btn btn-primary" (click)="erakutsiFormularioa()" *ngIf="ezkutatu==false">Erregistro berria sortu</button>
-<button type="button" class="btn btn-secondary" (click)="atzera()" *ngIf="ezkutatu==true">Atzera</button>
+<!-- <button type="button" class="btn btn-secondary" (click)="atzera()" *ngIf="ezkutatu==true">Atzera</button> -->
 </div>
 
 <div class="cards" *ngIf="ezkutatu==false">
@@ -12,10 +12,20 @@
 <div class="formularioa" *ngIf="ezkutatu==true">
   <div>
     <form>
-      <label for="fname">First name:</label><br>
-      <input type="text" id="fname" name="fname" value={{viajeros[posicion].nombre}}><br>
-      <label for="lname">Last name:</label><br>
-      <input type="text" id="lname" name="lname">
+      <label for="izena">Izena:</label><br>
+      <input type="text" id="izena" name="izena" [(ngModel)]="izena"><br>
+      <label for="abizena">Abizena:</label><br>
+      <input type="text" id="abizena" name="abizena" [(ngModel)]="abizena"><br>
+      <label for="dni">DNI:</label><br>
+      <input type="text" id="dni" name="dni" [(ngModel)]="dni"><br>
+      <label for="fechaI">Fecha de ingreso:</label><br>
+      <input type="text" id="fechaI" name="fechaI" [(ngModel)]="fechaI"><br>
+      <label for="fechaS">Fecha de salida:</label><br>
+      <input type="text" id="fechaS" name="fechaS" [(ngModel)]="fechaS"><br>
+      <label for="habitacion">Habitacion:</label><br>
+      <input type="text" id="habitacion" name="habitacion" [(ngModel)]="habitacion"><br>
+      <button type="submit" class="btn btn-primary" (click)="aldaketakGorde()">Bidali</button>
+      <button type="button" class="btn btn-secondary" (click)="atzera()">Atzera</button>
     </form>
   </div>
 </div>
