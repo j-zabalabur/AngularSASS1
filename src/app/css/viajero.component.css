@@ -1,3 +1,13 @@
-p {
-  color: yellow;
+.card {
+  background-color: lightgrey;
+  padding: 20px;
+  margin: 10px;
+  border-radius: 20px;
+  width: 270px;
+  height: 350px;
+}
+
+.botoiak {
+  display: flex;
+  justify-content: space-around;
 }/*# sourceMappingURL=viajero.component.css.map */

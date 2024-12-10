@@ -1,3 +1,13 @@
-p {
-  color: green;
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.goikoBotoiak {
+  text-align: center;
+}
+
+.formularioa {
+  text-align: center;
 }/*# sourceMappingURL=hotel.component.css.map */
